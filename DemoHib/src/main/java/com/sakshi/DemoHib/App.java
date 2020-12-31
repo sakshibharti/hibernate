@@ -16,7 +16,15 @@ public class App
     public static void main( String[] args )
     {
     	
+    	studentName sn = new studentName();
+    	sn.setFname("Sakshi");
+    	sn.setMname("Anil");
+    	sn.setLname("Bharti");
+    	
         student st= new student();
+        st.setSid(9);
+        st.setScolor("Black");
+        st.setSname(sn);
        
         
         Configuration con = new Configuration().configure().addAnnotatedClass(student.class);
@@ -29,7 +37,7 @@ public class App
         
         Transaction tx = session.beginTransaction();
         
-        st = (student) session.get(student.class, 6);
+         session.save(st);
         
         tx.commit();
         

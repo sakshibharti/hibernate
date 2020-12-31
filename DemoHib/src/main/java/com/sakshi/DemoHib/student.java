@@ -7,11 +7,12 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
+@Table
 public class student //POJO
 {
 	@Id
 	private int sid;
-	private String sname;
+	private studentName sname;
 	private String scolor;
 	
 	public int getSid() {
@@ -20,10 +21,11 @@ public class student //POJO
 	public void setSid(int sid) {
 		this.sid = sid;
 	}
-	public String getSname() {
+	
+	public studentName getSname() {
 		return sname;
 	}
-	public void setSname(String sname) {
+	public void setSname(studentName sname) {
 		this.sname = sname;
 	}
 	public String getScolor() {
