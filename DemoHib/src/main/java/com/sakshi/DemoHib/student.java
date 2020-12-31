@@ -7,14 +7,11 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name="student_table") 
 public class student //POJO
 {
 	@Id
 	private int sid;
-	@Transient
 	private String sname;
-	@Column(name="student_color")
 	private String scolor;
 	
 	public int getSid() {
@@ -35,6 +32,12 @@ public class student //POJO
 	public void setScolor(String scolor) {
 		this.scolor = scolor;
 	}
+	
+	@Override
+	public String toString() {
+		return "student [sid=" + sid + ", sname=" + sname + ", scolor=" + scolor + "]";
+	}
+	
 	
 
 }

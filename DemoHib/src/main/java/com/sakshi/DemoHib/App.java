@@ -17,9 +17,7 @@ public class App
     {
     	
         student st= new student();
-        st.setSid(5);
-        st.setSname("Takshi");
-        st.setScolor("Blue");
+       
         
         Configuration con = new Configuration().configure().addAnnotatedClass(student.class);
         
@@ -31,10 +29,11 @@ public class App
         
         Transaction tx = session.beginTransaction();
         
-        
-        session.save(st);
+        st = (student) session.get(student.class, 6);
         
         tx.commit();
+        
+        System.out.println(st);
        
         
     }
