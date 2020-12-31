@@ -1,14 +1,20 @@
 package com.sakshi.DemoHib;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
-@Entity 
+@Entity
+@Table(name="student_table") 
 public class student //POJO
 {
 	@Id
 	private int sid;
+	@Transient
 	private String sname;
+	@Column(name="student_color")
 	private String scolor;
 	
 	public int getSid() {
