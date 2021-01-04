@@ -1,9 +1,12 @@
 package com.sakshi.HibernateRelationsMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+//import javax.persistence.OneToOne;
 
 @Entity
 public class Student {
@@ -12,9 +15,11 @@ public class Student {
 	private int sid;
 	private String sname;
 	private int smarks;
+
 	
-	@OneToOne
-	private Laptop laptop;
+	@OneToMany(mappedBy="student")
+	private List<Laptop> laptop = new ArrayList<Laptop>();
+	
 	
 	public int getSid() {
 		return sid;
@@ -37,10 +42,10 @@ public class Student {
 	}
 	
 	
-	public Laptop getLaptop() {
+	public List<Laptop> getLaptop() {
 		return laptop;
 	}
-	public void setLaptop(Laptop laptop) {
+	public void setLaptop(List<Laptop> laptop) {
 		this.laptop = laptop;
 	}
 	
